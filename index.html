@@ -42,7 +42,15 @@
             </div>
         </section>
     </main>
-    
+    <script>
+        document.getElementById('enter_game_btn').addEventListener('click', function(){
+            let userName = document.getElementById('username_input').value;
+            if(userName === ''){
+                alert('Enter a username');
+                /*remove link to next page*/
+            }
+        })
+    </script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
