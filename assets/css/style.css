@@ -1,11 +1,38 @@
-h1{
-    color: greenyellow;
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Montserrat:wght@200&family=Quattrocento+Sans&family=Raleway:wght@200&display=swap');
 
 body{
     background-image: url(../images/starry-sky-1655503_960_720.jpg);
     color: white;
+    margin: 0;
+    padding: 0;
 }
+.container{
+    width: 80%;
+}
+
+#site_logo_div{
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+#site_logo_div h1 {
+    font-family: 'Fascinate', cursive;
+    color: greenyellow;
+    font-size: 3.5rem;
+}
+
+#site_logo_div a{
+    align-self: flex-end;
+}
+
+#landing_page_image img{
+    width: 50%;
+}
+
 a{
     color: white;
 }
