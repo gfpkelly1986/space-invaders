@@ -1,3 +1,11 @@
 h1{
     color: greenyellow;
 }
+
+body{
+    background-image: url(../images/starry-sky-1655503_960_720.jpg);
+    color: white;
+}
+a{
+    color: white;
+}
