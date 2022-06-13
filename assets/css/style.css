@@ -8,16 +8,20 @@
     padding: 0;
 }
 
+/* Body styles, starry night background image*/
 body{
     background-image: url(../images/starry-sky-1655503_960_720.jpg);
     color: white;
     
 }
+
+/*Container Wrappper*/
 .container{
     width: 80%;
     margin: 0 auto;
 }
 
+/*Logo Styles*/
 #site_logo_div{
     background-color: aquamarine;
     padding-top: 20px;
@@ -43,6 +47,7 @@ body{
     font-size: 2.5rem;
 }
 
+/*Spaceship image on landing page*/
 #landing_page_image img{
     padding-top: 15px;
     width: 100%;
@@ -50,6 +55,7 @@ body{
     opacity: 0.7;
 }
 
+/* Landing page welcome message box*/
 #game_welcome{
     font-family: 'Righteous', cursive;
     text-align: center;
@@ -76,8 +82,7 @@ body{
     font-weight: 800;
     text-align: center;
 }
-
-
+/*!!Change button link to play game, anchor tag and button causing bug!!*/
 #game_welcome button{
     padding: 5px;
 }
@@ -94,4 +99,39 @@ body{
 
 #game_welcome button a:hover{
     color: white;
+}
+
+/*Game board styles*/
+
+#game_board{
+    position: relative;
+    width: 60vw;
+    height: 80vh;
+    border: 2px solid red;
+    margin: 40px  auto 0 auto;
+    text-align: center;
+    color: white;
+    font-size: 3.5rem;
+    background-image: url(../images/starry-sky-1655503_960_720.jpg);
+}
+
+.enemy{
+    width: 15px;
+    height: 15px;
+    background-color: chartreuse;
+}
+
+#enemy_container{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 40px;
+}
+
+#ship{
+    width: 30px;
+    height: 20px;
+    background-color: blue;
+    position: absolute;
+    left: calc(50% - 15px);
+    bottom: 15%;
 }
