@@ -115,16 +115,13 @@ body{
     background-image: url(../images/starry-sky-1655503_960_720.jpg);
 }
 
-.enemy{
-    width: 15px;
-    height: 15px;
-    background-color: chartreuse;
-}
-
-#enemy_container{
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 40px;
+.enemy_container{
+    position: absolute;
+    top: 0px;
+    background-color: yellowgreen;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
 }
 
 #ship{

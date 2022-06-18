@@ -3,11 +3,6 @@ console.log('Console Working');
 const gameBoard = document.getElementById('game_board');
 let ship = document.getElementById('ship');
 
-let gameBoardHeight = window.getComputedStyle(gameBoard).getPropertyValue('border-top');
-console.log(gameBoardHeight);
-let gameBoardHeight2 = gameBoard.getBoundingClientRect();
-console.log(gameBoardHeight2);
-
 // let laser = false;
 // let activeLaser = document.getElementById('shoot'); 
 // activeLaser.addEventListener('click', clickHandler);
@@ -36,8 +31,7 @@ window.addEventListener('keydown', function(event) {
         gameBoard.appendChild(laser);
     //create a setInterval function that runs every 10 milliseconds, controls the removal of aliens if hit by the laser also.     
         let shootLaser = setInterval(function(){
-            let enemies = getElementsByClassName('enemy_container');
-
+            let enemies =document.getElementsByClassName('enemy_container');
             for(i = 0; i < enemies.length; i++){
                 let alien = enemies[i];
 
@@ -52,9 +46,20 @@ window.addEventListener('keydown', function(event) {
                         laserPosition <= alienPosition)
                         {
                             gameBoard.removeChild(alien);
-                        } //end removal of aliens
-                }
+                        } 
+                }// end DOM rect comparrison values for alien position and laser position, collision detection, remove if collision detected
+            }// end loop that fetches the DOM rect values for the laser and aliens
+            // move the laser up the game board 3px every 10 milliseconds, remove laser from the board if it hits the top of the game board.
+            let laserBottom = parseInt(window.getComputedStyle(laser).getPropertyValue('bottom'));
+            let gameBoardHeight = gameBoard.getBoundingClientRect().height;
+
+            if(laserBottom + 40 >= gameBoardHeight){
+                clearInterval(shootLaser);
+                gameBoard.removeChild(laser);
             }
+
+            laser.style.left = shipPosition + 10 + 'px';
+            laser.style.bottom = laserBottom + 3 + 'px';
         }, 10);
     }
 });
