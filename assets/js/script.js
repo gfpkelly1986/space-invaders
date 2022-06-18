@@ -38,14 +38,15 @@ window.addEventListener('keydown', function(event) {
                 if(alien != undefined){
                     let alienPosition = alien.getBoundingClientRect();
                     let laserPosition = laser.getBoundingClientRect();
-
+                    console.log(alienPosition);
+                    console.log(laserPosition);
                     if (
-                        laserPosition >= alienPosition.left &&
-                        laserPosition <= alienPosition.right &&
-                        laserPosition <= alienPosition.top &&
-                        laserPosition <= alienPosition)
+                        laserPosition.left >= alienPosition.left &&
+                        laserPosition.right <= alienPosition.right &&
+                        laserPosition.top - 6 <= alienPosition.top &&
+                        laserPosition.bottom - 6 <= alienPosition.bottom)
                         {
-                            gameBoard.removeChild(alien);
+                            laser.parentElement.removeChild(alien);
                         } 
                 }// end DOM rect comparrison values for alien position and laser position, collision detection, remove if collision detected
             }// end loop that fetches the DOM rect values for the laser and aliens
