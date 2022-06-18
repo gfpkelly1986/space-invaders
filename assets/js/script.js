@@ -61,7 +61,17 @@ window.addEventListener('keydown', function(event) {
 
             laser.style.left = shipPosition + 10 + 'px';
             laser.style.bottom = laserBottom + 3 + 'px';
-        }, 10);
-    }
-});
+        }, 10);  // end shootLaser setInterval function
+    } // end gameplay for spacebar pressed.
+
+}); //end event listener
+
+const increaseAliens = setInterval(function(){
+    let ufo = document.createElement('div');
+    ufo.classList.add('enemy_container');
+    let boardWidth = parseInt(gameBoard.getBoundingClientRect().width);
+    ufo.style.left = Math.floor(Math.random() * boardWidth) + 'px';
+    gameBoard.appendChild(ufo);
+},10000);
+
 
