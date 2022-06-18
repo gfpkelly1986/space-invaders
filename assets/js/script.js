@@ -34,21 +34,19 @@ window.addEventListener('keydown', function(event) {
             let enemies =document.getElementsByClassName('enemy_container');
             for(i = 0; i < enemies.length; i++){
                 let alien = enemies[i];
-
-                if(alien != undefined){
-                    let alienPosition = alien.getBoundingClientRect();
-                    let laserPosition = laser.getBoundingClientRect();
-                    console.log(alienPosition);
-                    console.log(laserPosition);
-                    if (
-                        laserPosition.left >= alienPosition.left &&
-                        laserPosition.right <= alienPosition.right &&
-                        laserPosition.top - 6 <= alienPosition.top &&
-                        laserPosition.bottom - 6 <= alienPosition.bottom)
-                        {
-                            laser.parentElement.removeChild(alien);
-                        } 
-                }// end DOM rect comparrison values for alien position and laser position, collision detection, remove if collision detected
+                let alienPosition = alien.getBoundingClientRect();
+                let laserPosition = laser.getBoundingClientRect();
+                console.log(alienPosition);
+                console.log(laserPosition);
+                if (
+                    laserPosition.left >= alienPosition.left &&
+                    laserPosition.right <= alienPosition.right &&
+                    laserPosition.top - 6 <= alienPosition.top &&
+                    laserPosition.bottom - 6 <= alienPosition.bottom)
+                    {
+                        laser.parentElement.removeChild(alien);
+                    } 
+                // end DOM rect comparrison values for alien position and laser position, collision detection, remove if collision detected
             }// end loop that fetches the DOM rect values for the laser and aliens
             // move the laser up the game board 3px every 10 milliseconds, remove laser from the board if it hits the top of the game board.
             let laserBottom = parseInt(window.getComputedStyle(laser).getPropertyValue('bottom'));
@@ -64,14 +62,25 @@ window.addEventListener('keydown', function(event) {
         }, 10);  // end shootLaser setInterval function
     } // end gameplay for spacebar pressed.
 
-}); //end event listener
+}); //end event listener for keydown function
 
+// random placement of new aliens on the game board.
 const increaseAliens = setInterval(function(){
     let ufo = document.createElement('div');
     ufo.classList.add('enemy_container');
     let boardWidth = parseInt(gameBoard.getBoundingClientRect().width);
     ufo.style.left = Math.floor(Math.random() * boardWidth) + 'px';
     gameBoard.appendChild(ufo);
-},10000);
+},4000);
+
+const fallingAliens = setInterval(function(){
+    let ufo = document.getElementsByClassName('enemy_container');
+        for(i = 0; i < ufo.length; i++){
+            let fallingUfo = ufo[i];
+            let ufoTop = parseInt(window.getComputedStyle(fallingUfo).getPropertyValue('top'));
+            fallingUfo.style.top = ufoTop + 15 + 'px';
+        }
+}, 500);
+
 
 
