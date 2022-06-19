@@ -73,11 +73,21 @@ const increaseAliens = setInterval(function(){
     gameBoard.appendChild(ufo);
 },4000);
 
+//control alien falling speed and falling distance
 const fallingAliens = setInterval(function(){
     let ufo = document.getElementsByClassName('enemy_container');
         for(i = 0; i < ufo.length; i++){
             let fallingUfo = ufo[i];
             let ufoTop = parseInt(window.getComputedStyle(fallingUfo).getPropertyValue('top'));
+            let boardBottom = parseInt(gameBoard.getBoundingClientRect().bottom);
+            console.log(boardBottom);
+            console.log(ufoTop);
+            if(ufoTop >= boardBottom){
+                clearInterval(fallingAliens);
+                window.location.reload();
+                gameBoard.removeChild(fallingUfo);
+                console.log('game over');
+            }
             fallingUfo.style.top = ufoTop + 15 + 'px';
         }
 }, 500);
