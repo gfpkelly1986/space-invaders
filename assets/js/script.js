@@ -62,39 +62,46 @@ window.addEventListener('keydown', function(event) {
 
 }); //end event listener for keydown function
 
-// random placement of new aliens on the game board.
-const increaseAliens = setInterval(function(){
-    let ufo = document.createElement('div');
-    ufo.classList.add('enemy_container');
-    let boardWidth = parseInt(gameBoard.getBoundingClientRect().width);
-    ufo.style.left = Math.floor(Math.random() * boardWidth) + 'px';
-    gameBoard.appendChild(ufo);
-},4000);
+//function called on button click to run the game
+function startGame(){
 
-//control alien falling speed and falling distance
-const fallingAliens = setInterval(function(){
-    let ufo = document.getElementsByClassName('enemy_container');
-        for(i = 0; i < ufo.length; i++){
-            let fallingUfo = ufo[i];
-            let ufoTop = parseInt(window.getComputedStyle(fallingUfo).getPropertyValue('top'));
-            let boardBottom = parseInt(gameBoard.getBoundingClientRect().bottom);
-            let shipTop = ship.getBoundingClientRect().top;
-            let fallingUfoBottom = fallingUfo.getBoundingClientRect().bottom;
-            if(ufoTop >= boardBottom){
-                clearInterval(fallingAliens);
-                window.location.reload();
-                gameBoard.removeChild(fallingUfo);
-                console.log('game over');
+    const increaseAliens = setInterval(function(){
+        let ufo = document.createElement('div');
+        ufo.classList.add('enemy_container');
+        let boardWidth = parseInt(gameBoard.getBoundingClientRect().width);
+        ufo.style.left = Math.floor(Math.random() * (boardWidth - 30))  + 'px';
+        gameBoard.appendChild(ufo);
+    }, 1000);
+
+        fallingAliens = setInterval(function(){
+        let ufo = document.getElementsByClassName('enemy_container');
+
+        if(ufo != undefined){
+            for(i = 0; i < ufo.length; i++){
+                let fallingUfo = ufo[i];
+                let ufoTop = parseInt(window.getComputedStyle(fallingUfo).getPropertyValue('top'));
+                let boardBottom = parseInt(gameBoard.getBoundingClientRect().bottom - 150);
+                let shipCoordinates = ship.getBoundingClientRect();
+                let fallingCoordinates = fallingUfo.getBoundingClientRect();
+                if(ufoTop >= boardBottom){
+                    clearInterval(fallingAliens);
+                    window.location.reload();
+                    gameBoard.removeChild(fallingUfo);
+                    console.log('game over');
+                }
+                if( fallingCoordinates.bottom >= shipCoordinates.top &&
+                    fallingCoordinates.left -10 <= shipCoordinates.left &&
+                    fallingCoordinates.right -10<= shipCoordinates.right){
+                    clearInterval(fallingAliens);
+                    window.location.reload();
+                    gameBoard.removeChild(fallingUfo);
+                    console.log('game over');
+                }
+                fallingUfo.style.top = ufoTop + 15 + 'px';
             }
-            if( fallingUfoBottom >= shipTop){
-                clearInterval(fallingAliens);
-                window.location.reload();
-                gameBoard.removeChild(fallingUfo);
-                console.log('game over');
-            }
-            fallingUfo.style.top = ufoTop + 15 + 'px';
         }
-}, 500);
+    },4000)
+}
 
 
 

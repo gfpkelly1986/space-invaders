@@ -106,6 +106,7 @@ body{
 #game_board{
     position: relative;
     width: 60vw;
+    max-width: 400px;
     height: 80vh;
     border: 2px solid red;
     margin: 40px  auto 0 auto;
