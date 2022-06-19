@@ -62,6 +62,18 @@ window.addEventListener('keydown', function(event) {
 
 }); //end event listener for keydown function
 
+//Mobile controls
+function moveLeftMobile(){
+    let shipPosition = parseInt(window.getComputedStyle(ship).getPropertyValue('left'));
+    ship.style.left = shipPosition - 5 + 'px';
+    }
+    
+function moveRightMobile(){
+    let shipPosition = parseInt(window.getComputedStyle(ship).getPropertyValue('left'));
+    ship.style.left = shipPosition + 5 + 'px';
+}
+
+
 //function called on button click to run the game
 function startGame(){
 
