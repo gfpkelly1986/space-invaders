@@ -36,8 +36,6 @@ window.addEventListener('keydown', function(event) {
                 let alien = enemies[i];
                 let alienPosition = alien.getBoundingClientRect();
                 let laserPosition = laser.getBoundingClientRect();
-                console.log(alienPosition);
-                console.log(laserPosition);
                 if (
                     laserPosition.left >= alienPosition.left &&
                     laserPosition.right <= alienPosition.right &&
@@ -80,9 +78,15 @@ const fallingAliens = setInterval(function(){
             let fallingUfo = ufo[i];
             let ufoTop = parseInt(window.getComputedStyle(fallingUfo).getPropertyValue('top'));
             let boardBottom = parseInt(gameBoard.getBoundingClientRect().bottom);
-            console.log(boardBottom);
-            console.log(ufoTop);
+            let shipTop = ship.getBoundingClientRect().top;
+            let fallingUfoBottom = fallingUfo.getBoundingClientRect().bottom;
             if(ufoTop >= boardBottom){
+                clearInterval(fallingAliens);
+                window.location.reload();
+                gameBoard.removeChild(fallingUfo);
+                console.log('game over');
+            }
+            if( fallingUfoBottom >= shipTop){
                 clearInterval(fallingAliens);
                 window.location.reload();
                 gameBoard.removeChild(fallingUfo);
