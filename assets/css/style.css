@@ -83,22 +83,16 @@ body{
     text-align: center;
 }
 /*!!Change button link to play game, anchor tag and button causing bug!!*/
-#game_welcome button{
-    padding: 5px;
-}
-
-#game_welcome button a{
+#page_link{
     text-decoration: none;
-    /* color: black; */
+    color: black;
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px;
 }
-
-#game_welcome button:hover {
+#page_link:hover{
+    color: white;
     background-color: black;
-    color: white;
-}
-
-#game_welcome button a:hover{
-    color: white;
 }
 
 /* Style for countdown and currentscore*/
@@ -165,8 +159,8 @@ body{
     background-color: red; 
 }
 
-@media screen and (min-width: 1025px){
+/* @media screen and (min-width: 1025px){
     #controller{
         visibility: hidden;
     }
-}
+} */

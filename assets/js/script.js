@@ -3,6 +3,14 @@ console.log('Console Working');
 const gameBoard = document.getElementById('game_board');
 let ship = document.getElementById('ship');
 
+window.addEventListener('load', function(event) {
+    addNewUser();
+  });
+function addNewUser(){
+    let newestUser = sessionStorage.getItem('NewUser');
+    document.getElementById('username').innerHTML = newestUser;
+}
+
 //Add event listener for any key pressed, getComputedstyle() returns a CSSStyleDeclaration Object of styles relating to element id='ship'
 window.addEventListener('keydown', function(event) {
     let gameBoardWidth = document.getElementById('game_board').clientWidth;
@@ -104,6 +112,7 @@ const increaseAliens = setInterval(function(){
         }
 },4000)
 
+
 //Mobile controls
 function moveLeftMobile(){
     let shipPosition = parseInt(window.getComputedStyle(ship).getPropertyValue('left'));
@@ -149,6 +158,10 @@ function mobileShoot(){
         laser.style.bottom = laserBottom + 3 + 'px';
     });
 }
+
+
+
+
 
 
     

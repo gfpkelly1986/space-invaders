@@ -31,27 +31,19 @@
                 <!--Welcome screen structure-->
                 <div id="game_welcome">
                     <h2>Welcome to Space Invaders</h2>
-                    <h3>Eliminate as many UFO's as possible within two minutes</h3>
+                    <h3>Eliminate as many UFO's as possible within one minute</h3>
                     <label for="username_input">
                         Enter Player Id/Username
                     </label>
                     <div>
                         <input type="text" id="username_input" name="username" placeholder="Enter Username" required>
                     </div>
-                    <button id="enter_game_btn" type="submit"><a href="playgame.html">Enter Game</a></button>
+                    <a onclick="getNewUser();" id="page_link" href="playgame.html">Enter Game</a>
                 </div>
             </div>
         </section>
     </main>
-    <script>
-        document.getElementById('enter_game_btn').addEventListener('click', function(){
-            let userName = document.getElementById('username_input').value;
-            if(userName === ''){
-                alert('Enter a username');
-                /*remove link to next page*/
-            }
-        })
-    </script>
-    <script src="assets/js/script.js"></script>
+    
+    <script src="assets/js/getuser.js"></script>
 </body>
 </html>
