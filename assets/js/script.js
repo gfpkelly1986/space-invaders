@@ -7,7 +7,7 @@ let ship = document.getElementById('ship');
 window.addEventListener('keydown', function(event) {
     let gameBoardWidth = document.getElementById('game_board').clientWidth;
     let shipPosition = parseInt(window.getComputedStyle(ship).getPropertyValue('left'));
-    
+
     //Left direction movement
     if(event.key === 'ArrowLeft' && shipPosition > 1){
         ship.style.left = shipPosition - 5 + 'px';
@@ -57,6 +57,15 @@ window.addEventListener('keydown', function(event) {
     } // end gameplay for spacebar pressed.
 
 }); //end event listener for keydown function
+
+const count = setInterval(function(){
+    let countDown = parseInt(document.getElementById('countdown').innerHTML);
+    document.getElementById('countdown').innerHTML = countDown - 1;
+    if(countDown === 1){
+        clearInterval(count);
+        window.location.reload();
+    }
+},1000)
 
 const increaseAliens = setInterval(function(){
     let ufo = document.createElement('div');
