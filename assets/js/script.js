@@ -40,7 +40,7 @@ window.addEventListener('keydown', function(event) {
                         laser.parentElement.removeChild(alien);
                         document.getElementById('score_count').innerHTML = scoreCount + 1;
                     } 
-                // end DOM rect comparrison values for alien position and laser position, collision detection, remove if collision detected
+                // end DOM rect comparison values for alien position and laser position, collision detection, remove if collision detected
             }// end loop that fetches the DOM rect values for the laser and aliens
             // move the laser up the game board 3px every 10 milliseconds, remove laser from the board if it hits the top of the game board.
             let laserBottom = parseInt(window.getComputedStyle(laser).getPropertyValue('bottom'));
@@ -58,6 +58,7 @@ window.addEventListener('keydown', function(event) {
 
 }); //end event listener for keydown function
 
+//set countdown timer
 const count = setInterval(function(){
     let countDown = parseInt(document.getElementById('countdown').innerHTML);
     document.getElementById('countdown').innerHTML = countDown - 1;
@@ -67,6 +68,7 @@ const count = setInterval(function(){
     }
 },1000)
 
+// increase alien ememies
 const increaseAliens = setInterval(function(){
     let ufo = document.createElement('div');
     ufo.classList.add('enemy_container');
@@ -75,6 +77,7 @@ const increaseAliens = setInterval(function(){
     gameBoard.appendChild(ufo);
 }, 3000);
 
+// control the fall spedd of the aliens
   const fallingAliens = setInterval(function(){
     let ufo = document.getElementsByClassName('enemy_container');
         for(i = 0; i < ufo.length; i++){
@@ -123,6 +126,7 @@ function mobileShoot(){
             let alien = enemies[i];
             let alienPosition = alien.getBoundingClientRect();
             let laserPosition = laser.getBoundingClientRect();
+            let scoreCount = parseInt(document.getElementById('score_count').innerHTML);
             if (
                 laserPosition.left >= alienPosition.left &&
                 laserPosition.right <= alienPosition.right &&
@@ -130,6 +134,7 @@ function mobileShoot(){
                 laserPosition.bottom - 6 <= alienPosition.bottom)
                 {
                     laser.parentElement.removeChild(alien);
+                    document.getElementById('score_count').innerHTML = scoreCount + 1;
                 } 
         }
         let laserBottom = parseInt(window.getComputedStyle(laser).getPropertyValue('bottom'));

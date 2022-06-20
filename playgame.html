@@ -35,9 +35,9 @@
         </div>
         <div id="ship"></div>
         <div id="controller">
-            <i onclick="moveLeftMobile();" id="left_click" class="fa-solid fa-less-than"></i>
-            <i onclick="mobileShoot()" id="shoot" class="fa-regular fa-circle-dot"></i>
-            <i onclick="moveRightMobile();" id="right_click" class="fa-solid fa-greater-than"></i>
+            <i onmouseup="moveLeftMobile();" onmousedown="moveLeftMobile();" onkeydown="moveLeftMobile();" onclick="moveLeftMobile();" id="left_click" class="fa-solid fa-less-than"></i>
+            <i onclick="mobileShoot();" id="shoot" class="fa-regular fa-circle-dot"></i>
+            <i onmouseup="moveRightMobile();" onmousedown="moveRightMobile();" onkeydown="moveRightMobile();" onclick="moveRightMobile();" id="right_click" class="fa-solid fa-greater-than"></i>
         </div>
         
     </div>
