@@ -100,11 +100,16 @@ body{
 #game_welcome button a:hover{
     color: white;
 }
+
+/* Style for countdown and currentscore*/
 #counters{
     width: 20vh;
     margin: 0 auto;
-    background-color: red;
+    font-family: 'Fascinate', cursive;
+    color: yellowgreen;
+    font-size: 1.0rem;
     text-align: center;
+    margin-top: 30px;
 }
 
 /*Game board styles*/
@@ -113,7 +118,7 @@ body{
     position: relative;
     width: 60vw;
     max-width: 400px;
-    height: 80vh;
+    height: 70vh;
     border: 2px solid red;
     margin: 40px  auto 0 auto;
     text-align: center;
