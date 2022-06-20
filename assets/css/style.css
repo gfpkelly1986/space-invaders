@@ -100,6 +100,12 @@ body{
 #game_welcome button a:hover{
     color: white;
 }
+#counters{
+    width: 20vh;
+    margin: 0 auto;
+    background-color: red;
+    text-align: center;
+}
 
 /*Game board styles*/
 

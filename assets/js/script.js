@@ -30,6 +30,7 @@ window.addEventListener('keydown', function(event) {
                 let alien = enemies[i];
                 let alienPosition = alien.getBoundingClientRect();
                 let laserPosition = laser.getBoundingClientRect();
+                let scoreCount = parseInt(document.getElementById('score_count').innerHTML);
                 if (
                     laserPosition.left >= alienPosition.left &&
                     laserPosition.right <= alienPosition.right &&
@@ -37,6 +38,7 @@ window.addEventListener('keydown', function(event) {
                     laserPosition.bottom - 6 <= alienPosition.bottom)
                     {
                         laser.parentElement.removeChild(alien);
+                        document.getElementById('score_count').innerHTML = scoreCount + 1;
                     } 
                 // end DOM rect comparrison values for alien position and laser position, collision detection, remove if collision detected
             }// end loop that fetches the DOM rect values for the laser and aliens
