@@ -1,29 +1,27 @@
 
-const gameBoard = document.getElementById('game_board');
+let gameBoard = document.getElementById('game_board');
 let ship = document.getElementById('ship');
 
-window.addEventListener('load', function(event) {
+window.addEventListener('load', function (){
     addNewUser();
-  });
+});
 function addNewUser(){
     let newestUser = sessionStorage.getItem('NewUser');
     document.getElementById('username').innerHTML = newestUser;
 }
 
 //Add event listener for any key pressed, getComputedstyle() returns a CSSStyleDeclaration Object of styles relating to element id='ship'
-window.addEventListener('keydown', function(event) {
+window.addEventListener('keydown',function(event){
     let gameBoardWidth = document.getElementById('game_board').clientWidth;
     let shipPosition = parseInt(window.getComputedStyle(ship).getPropertyValue('left'));
 
     //Left direction movement
     if(event.key === 'ArrowLeft' && shipPosition > 1){
         ship.style.left = shipPosition - 5 + 'px';
-        console.log(ship.style.left);
     }
     //Right direction movement
     if(event.key === 'ArrowRight' && shipPosition < gameBoardWidth - 32){
         ship.style.left = shipPosition + 5 + 'px';
-        console.log(ship.style.left);
     }
     // if space bar is pressed, a div with the class of laser is created
     if(event.code == 'Space'){
@@ -55,7 +53,6 @@ window.addEventListener('keydown', function(event) {
                 clearInterval(shootLaser);
                 gameBoard.removeChild(laser);
             }
-
             laser.style.left = shipPosition + 10 + 'px';
             laser.style.bottom = laserBottom + 3 + 'px';
         });  
@@ -82,7 +79,7 @@ const increaseAliens = setInterval(function(){
 }, 3000);
 
 // control the fall speed of the aliens
-  const fallingAliens = setInterval(function(){
+const fallingAliens = setInterval(function(){
     let ufo = document.getElementsByClassName('enemy_container');
         for(i = 0; i < ufo.length; i++){
             let fallingUfo = ufo[i];
