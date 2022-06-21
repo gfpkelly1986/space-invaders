@@ -159,8 +159,7 @@ body{
     background-color: red; 
 }
 
-/*To add a media query to remove the images from the header on mobile screens*/
-
+/* Media queries for mobile header and controller layout*/
 @media screen and (max-width: 500px) {
     #logo_img1{
         width: 45px;
