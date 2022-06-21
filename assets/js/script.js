@@ -117,6 +117,7 @@ function moveLeftMobile(){
     }
     
 function moveRightMobile(){
+    let gameBoardWidth = document.getElementById('game_board').clientWidth;
     let shipPosition = parseInt(window.getComputedStyle(ship).getPropertyValue('left'));
     if(shipPosition < gameBoardWidth - 32){
         ship.style.left = shipPosition + 5 + 'px';
