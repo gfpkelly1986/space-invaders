@@ -159,4 +159,40 @@ body{
     background-color: red; 
 }
 
-/*To add a media query to remove the images from th eheader on mobile screens*/
+/*To add a media query to remove the images from the header on mobile screens*/
+
+@media screen and (max-width: 500px) {
+    #logo_img1{
+        width: 45px;
+        height: 50px;
+        position: absolute;
+        left: 5%;
+        top: 100%;
+        margin-top: 20px;
+    }
+    #logo_img2{
+        width: 45px;
+        height: 50px;
+        position: absolute;
+        right: 5%;
+        top: 100%;
+        margin-top: 20px;
+    }
+    #landing_page_image img{
+        padding-top: 50px;
+        width: 100%;
+        height: 20vh;
+        opacity: 0.7;
+    }
+
+    #game_board{
+        height: 60vh;
+}
+}
+
+@media screen and (max-width: 375px){
+    #controller i{
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+}
