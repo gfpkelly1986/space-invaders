@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Space Invaders, browser game, educational game examples, play games online">
+    <meta name="keywords" content="Space Invaders, browser game, educational game examples, play games">
     <meta name="description" content="A simple javascript browser game for educational and entertainment purposes">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -34,13 +34,15 @@
                 <div id="game_welcome">
                     <h2>Welcome to Space Invaders</h2>
                     <h3>Eliminate as many aliens as possible within one minute</h3>
-                    <label for="username_input">
-                        Enter Player Id/Username
-                    </label>
-                    <div>
-                        <input type="text" id="username_input" name="username" placeholder="Enter Username" required>
-                    </div>
-                    <a onclick="getNewUser();" id="page_link" href="playgame.html">Enter Game</a>
+                    <form action="playgame.html">
+                        <label for="username_input">
+                            Enter Player Id/Username
+                        </label>
+                        <div>
+                            <input type="text" id="username_input" name="username" placeholder="Enter Username" required>
+                        </div>
+                        <button onclick="getNewUser();" id="page_link" type="submit">Enter Game</button>
+                </form>
                 </div>
             </div>
         </section>
@@ -49,3 +51,5 @@
     <script src="assets/js/getuser.js"></script>
 </body>
 </html>
+
+<!--<a onclick="getNewUser();" id="page_link" href="playgame.html">Enter Game</a>-->
