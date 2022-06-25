@@ -42,7 +42,7 @@ The welcome screen for this website allows users to land at the site without hav
    - Users name added to the top of the page
    - Current Score tab that tracks the users score
    - A countdown timer that counts down from one minute
-   - Responsive game board (Enemies contained within the board)
+   - Enemies contained within the game board
    - The Aliens/Enemies (Controlled creation and falling rate)
    - The Users ship (Shoots laser)
    - Controls for touch screen/mobile users
@@ -71,20 +71,36 @@ The code above was kept in the script.js file above the window-keydown-eventlist
 
 The above for loop is nested in a setInterval function which is in turn nested in an if statement that is executed within the window-keydown-eventlistener if the condition of the 'Space' key being pressed is returned true. When pressed the setInterval function runs at the default 10 millisecond time interval. The loop runs as follows every 10 milliseconds: for each item in the enemies class store each div in the alien variable, store each aliens position relative to the viewport in the alienPosition variable, store the position of the laser relative to the viewport in the laserPosition variable and if they collide remove that alien and add one to the scorecount. The score_count elements default innerHTML is set to 0. This is stored in scoreCount and incremented by one with each collision.
 
-
-![For loop execution video](assets/images/forloop-execution.mp4)
-
-
-
 ### Countdowntimer that counts down from one minute:
 
 ![Screenshot of countdown feature](assets/images/readmeimgs/timeremaining.PNG)
 
-#### Code used for theis function
+#### Code used for theis function:
 
 ![Countdown timer code](assets/images/readmeimgs/Countdowntimer.PNG)
 
 The setInterval function avove runs every second. It takes the element with an ID of countdown and stores its innerHTML in the countDown variable using the parseInt method. It decrements its value by 1 and updates the DOM with its new value. If the value of the countdown hits 1 window is re-loaded. The value of 1 was chosen as there was an issue where the value of -1 was seen just before the window had time to reload if the condition in the if statement was set to zero.
 
+### Enemies contained within the game board:
 
+![Screenshot of enemies contained within the gameboard](assets/images/readmeimgs/contained-enemies.PNG)
+
+#### Code used to perform this function:
+
+![code to position the aliens on the board (contained) after they are created](assets/images/readmeimgs/position-increasing-aliens.PNG)
+
+The above code is part of the increasingAliens setInterval function which will be discussed below. The width of the board is stored in the boardWidth variable using the combination of the parseInt() method and the getBoundingClientRect() method. The getBoundingClientRect() method returns a DOM Rect Object which contains an elements width and height and its position relative to the viewport as discussed here: https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect.
+To position each new alien randomly within the gameBoard the Math.floor(Math.random()) methods were used. An integer value within the game board with minus the alien width is returned and applied to the left style position of the alien. Each one is then appended to the game board using the .appendChild() method.
+
+### The Aliens/Enemies (Controlled creation and falling rate):
+
+![Falling aliens image](assets/images/readmeimgs/fallingrate.PNG)
+
+Each alien is created using the first 2 lines of code within the increaseAliens setinterval function. A new div is created every 3 seconds using the createElement() method and then the class list of enemy_container is added. If the div was to be appended to the board at this point the div would be placed in the top left as set in the CSS stylesheet. It is positioned as discussed above.
+
+#### Code used to perform this function:
+
+![Increasing the aliens](assets/images/readmeimgs/increaseing-aliens.PNG)
+
+![Alien falling rate](assets/images/readmeimgs/fallingaliens.PNG)
 
