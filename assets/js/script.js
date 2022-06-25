@@ -11,7 +11,7 @@ function addNewUser(){
 }
 
 //Add event listener for any key pressed, getComputedstyle() returns a CSSStyleDeclaration Object of styles relating to element id='ship'
-window.addEventListener('keydown',function(event){
+window.addEventListener('keydown', function (event){
     let gameBoardWidth = document.getElementById('game_board').clientWidth;
     let shipPosition = parseInt(window.getComputedStyle(ship).getPropertyValue('left'));
 
@@ -29,7 +29,7 @@ window.addEventListener('keydown',function(event){
         laser.classList.add('laser_beam');
         gameBoard.appendChild(laser);
     //create a setInterval function that runs every 10 milliseconds,also controls the removal of aliens if hit by the laser.     
-        let shootLaser = setInterval(function(){
+        let shootLaser = setInterval(function (){
             let enemies = document.getElementsByClassName('enemy_container');
             for(i = 0; i < enemies.length; i++){
                 let alien = enemies[i];
@@ -60,7 +60,7 @@ window.addEventListener('keydown',function(event){
 }); //end event listener for keydown function
 
 //set countdown timer
-const count = setInterval(function(){
+const count = setInterval(function (){
     let countDown = parseInt(document.getElementById('countdown').innerHTML);
     document.getElementById('countdown').innerHTML = countDown - 1;
     if(countDown === 1){
@@ -70,7 +70,7 @@ const count = setInterval(function(){
 },1000)
 
 // increase alien ememies
-const increaseAliens = setInterval(function(){
+const increaseAliens = setInterval(function (){
     let ufo = document.createElement('div');
     ufo.classList.add('enemy_container');
     let boardWidth = parseInt(gameBoard.getBoundingClientRect().width);
@@ -79,7 +79,7 @@ const increaseAliens = setInterval(function(){
 }, 3000);
 
 // control the fall speed of the aliens
-const fallingAliens = setInterval(function(){
+const fallingAliens = setInterval(function (){
     let ufo = document.getElementsByClassName('enemy_container');
         for(i = 0; i < ufo.length; i++){
             let fallingUfo = ufo[i];
