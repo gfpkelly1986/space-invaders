@@ -96,11 +96,31 @@ To position each new alien randomly within the gameBoard the Math.floor(Math.ran
 
 ![Falling aliens image](assets/images/readmeimgs/fallingrate.PNG)
 
-Each alien is created using the first 2 lines of code within the increaseAliens setinterval function. A new div is created every 3 seconds using the createElement() method and then the class list of enemy_container is added. If the div was to be appended to the board at this point the div would be placed in the top left as set in the CSS stylesheet. It is positioned as discussed above.
-
 #### Code used to perform this function:
+
+Each alien is created using the first 2 lines of code within the increaseAliens setinterval function. A new div is created every 3 seconds using the createElement() method and then the class list of enemy_container is added. If the div was to be appended to the board at this point the div would be placed in the top left as set in the CSS stylesheet. It is positioned as discussed above. The variable of alien could have been reused here as it has local scope in the shootLaser function above but changing the name to ufo hepled me to think about each function seperately.
 
 ![Increasing the aliens](assets/images/readmeimgs/increaseing-aliens.PNG)
 
 ![Alien falling rate](assets/images/readmeimgs/fallingaliens.PNG)
 
+The code above controls the falling rate and also collisions between the aliens and the bottom of the board and collisions between the aliens and the ship. If the ship or board is not hit the aliens drop down every 4 seconds by 15 px. The timing at present of the falls means the time runs out before the aliens reach the ship or board but if its increased the window will reload if either event occurs. The getComputedStyle().getPropertyValue() is used to get the top: 0px value of the enemy_container class so it can be used add to in the last line of code, fallingUfo.style.top = ufoTop + 15 + 'px'. The getComputedStyle() method can be read about here: https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle. The key understanding is that this method returns a live CSSStyleDeclaration object, which updates automatically when the element's styles are changed. Every 4 seconds the top value is increased by the setInterval function.
+
+### The Users ship (Shoots laser):
+
+![screenshot of laser shot](assets/images/readmeimgs/shoot-laser.PNG)
+
+#### Code used to perform this function:
+
+![screenshot of code to shoot laser](assets/images/readmeimgs/shoot-laser-code.PNG)
+
+The code above is contained within the shootLaser setInterval function from above that tracks the current score also. Again getComputedStyle() and getPropertyValue track the lasers bottom CSS style value, if the top of the laser (bottom + 40px) hits the top of the gameboard, the laser is removed from the gameboard and the shootLaser interval is cleared, until the space bar is pressed again. The gameBoardHeight variable is getting its value from the getBoundingClientRect().height property value.
+
+### Controls for touch screen/mobile users:
+
+![screenshot of touch controls](assets/images/readmeimgs/touch-controls.PNG)
+
+#### Code used for this function:
+To control the game from a touch screen I reused most of the code from above but put them into seperate functions as I had difficulty getting the right conditional test for testing if the space bar being pressed being or the controller clicked was evaluating to true. Most tests evaluated to false and one that worked seemed to make the interval repeat itself(double its speed). I called these functions using onkey down, onmouse up, onmousedown and on onclick from each icon as shown below. Using multiple event handlers had the effect of speeding up the left and right movement on mobile so less clicks were needed to get the ship to move further.
+
+![Calling the mobile controller functions](assets/images/readmeimgs/mobile-controller-function-calls.PNG)
