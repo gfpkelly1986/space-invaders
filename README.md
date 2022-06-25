@@ -69,7 +69,7 @@ The code above was kept in the script.js file above the window-keydown-eventlist
 
 ![Current score tab for the users score](assets/images/readmeimgs/scorecount3.PNG)
 
-The above for loop is nested in a setInterval function which is in turn nested in an if statement that is executed within the window-keydown-eventlistener if the condition of the 'Space' key being pressed is returned true. When pressed the setInterval function runs at the default 10 millisecond time interval. The loop runs as follows every 10 milliseconds: for each item in the enemies class store each div in the alien variable, store each aliens position relative to the viewport in the alienPosition variable, store the position of the laser relative to the viewport in the laserPosition variable and if they collide remove that alien and add one to the scorecount. The score_count elements default innerHTML is set to 0. This is stored in scoreCount and incremented by one with each collision.
+The above for loop is nested in a setInterval function which is in turn nested in an if statement that is executed within the window-keydown-eventlistener if the condition of the 'Space' key being pressed is returned true. When pressed the setInterval function runs at the default 10 millisecond time interval. The loop runs as follows: Every 10 milliseconds: for each enemy with a class of enemy_container, store each div in the alien variable, store each aliens position relative to the viewport in the alienPosition variable, store the position of the laser relative to the viewport in the laserPosition variable and if they collide remove that alien and add one to the scorecount. The score_count elements default innerHTML is set to 0. This is stored in scoreCount and incremented by one with each collision.
 
 ### Countdowntimer that counts down from one minute:
 
@@ -124,3 +124,28 @@ The code above is contained within the shootLaser setInterval function from abov
 To control the game from a touch screen I reused most of the code from above but put them into seperate functions as I had difficulty getting the right conditional test for testing if the space bar being pressed being or the controller clicked was evaluating to true. Most tests evaluated to false and one that worked seemed to make the interval repeat itself(double its speed). I called these functions using onkey down, onmouse up, onmousedown and on onclick from each icon as shown below. Using multiple event handlers had the effect of speeding up the left and right movement on mobile so less clicks were needed to get the ship to move further.
 
 ![Calling the mobile controller functions](assets/images/readmeimgs/mobile-controller-function-calls.PNG)
+
+
+# Desired Features:
+- Game Sounds
+   - Apply sounds when the ship shoots a laser 
+   - Apply sounds for when the target is eliminated
+
+- More imagery/Apply theme to game
+   - Apply a better theme to the game, possibly star wars themed.
+   - More imagery, particularly to the desktop to help fill the screen
+
+- Store the highest score
+   - Compare the users current score against the highest score which would be stored permanantly. If higher then update the high score.
+
+- Pause the game
+   - Provide a way for the user to pause the game.
+
+- Load the game from a start button
+   - I attempted to do this with this version but the setInterval function kept speeding up with each shot fired. This problem is something I want to understand better.
+
+- Speed levels
+   - Provide some increasing levels of speed if certain scores are reached.
+
+
+
