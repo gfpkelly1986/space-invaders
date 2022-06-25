@@ -71,6 +71,11 @@ The code above was kept in the script.js file above the window-keydown-eventlist
 
 The above for loop is nested in a setInterval function which is in turn nested in an if statement that is executed within the window-keydown-eventlistener if the condition of the 'Space' key being pressed is returned true. When pressed the setInterval function runs at the default 10 millisecond time interval. The loop runs as follows every 10 milliseconds: for each item in the enemies class store each div in the alien variable, store each aliens position relative to the viewport in the alienPosition variable, store the position of the laser relative to the viewport in the laserPosition variable and if they collide remove that alien and add one to the scorecount. The score_count elements default innerHTML is set to 0. This is stored in scoreCount and incremented by one with each collision.
 
+
+![For loop execution video](assets/images/forloop-execution.mp4)
+
+
+
 ### Countdowntimer that counts down from one minute:
 
 ![Screenshot of countdown feature](assets/images/readmeimgs/timeremaining.PNG)
