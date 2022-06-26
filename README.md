@@ -160,4 +160,7 @@ To control the game from a touch screen I reused most of the code from above but
 - The W3C Schools CSS validator was used to test the CSS during development and before final push to git hub. There were no CSS errors returned from this validator test.
 - The JavaScript code was run through the Jshint linter and the results were ....
 
+# Bugs 
+- The main bug I had during development was when trying to implement a 'start game' button. The function would execute fine but as you attempted to play the game each shot fired made the game run faster and faster until it became unplayable. I had this function outside the code for the window-keydown-eventlistener and could not work out why the shootLaser setInterval function would speed up so for now the enemies are created quite slowly to allow the user to start without getting overwhelmed by enemies.
+
 
