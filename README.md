@@ -163,6 +163,23 @@ To control the game from a touch screen I reused most of the code from above but
 # Bugs 
 - The main bug I had during development was when trying to implement a 'start game' button. The function would execute fine but as you attempted to play the game each shot fired made the game run faster and faster until it became unplayable. I had this function outside the code for the window-keydown-eventlistener and could not work out why the shootLaser setInterval function would speed up so for now the enemies are created quite slowly to allow the user to start without getting overwhelmed by enemies.
 
+# Javascript Methods Used
+- [addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+- [parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)            
+- [getComputedStyle()](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle) 
+- [getPropertyValue()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyValue)   
+- [appendChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)         
+- [createElement()](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)       
+- [getBoundingClientRect()](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+- [getElementById()](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
+- [getElementsByClassName()](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName)
+- [setInterval()](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)
+- [clearInterval()](https://developer.mozilla.org/en-US/docs/Web/API/clearInterval)
+- [Math.floor()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor)
+- [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [removeChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
+- [reload()](https://developer.mozilla.org/en-US/docs/Web/API/Location/reload)
+
 # Deployment
 - This webpage was deployed to git hub pages at the following link  [My git hub pages link of live website]( https://gfpkelly1986.github.io/space-invaders/) 
 - Steps taken
