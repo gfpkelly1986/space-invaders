@@ -179,6 +179,7 @@ To control the game from a touch screen I reused most of the code from above but
 - [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 - [removeChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
 - [reload()](https://developer.mozilla.org/en-US/docs/Web/API/Location/reload)
+- [setItem() + getItem()](https://www.w3schools.com/jsref/met_storage_getitem.asp)
 
 # Console logs during development
 ![comparing DOMRect object values](assets/images/readmeimgs/compare-domrect-values.PNG) ![DOMRect docs](assets/images/readmeimgs/getBoundingClientRect.PNG)
@@ -214,3 +215,14 @@ Landing page Wireframe.
 ![play game wireframe](assets/images/readmeimgs/wireframe-playgame.jpg)
 
 Board game page wireframe.
+
+# Credits/Attributions
+- Tutorials watched:
+
+   - [LearnMux Tamil YouTube](https://www.youtube.com/watch?v=mwl95yvl-n0)   [+ Github](https://github.com/learnmux/Space-Shooter-Game-Using-Javascript)
+
+   - [Freecodecamp YouTube](https://www.youtube.com/watch?v=lhNdUVh3qCc)     [+ Github](https://github.com/kubowania/space-invaders)
+
+   - [Coding Dojo YouTube](https://www.youtube.com/watch?v=XmqAPQsc1n4)      [+ Github](https://github.com/keephopealive/academy-space-invaders)
+
+   - [Coding with Adam YouTube](https://www.youtube.com/watch?v=i7FzA4NavDs)    [+ Github](https://github.com/CodingWith-Adam/shooting-bullets-game-dev)
