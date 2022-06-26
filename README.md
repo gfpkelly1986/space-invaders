@@ -180,6 +180,23 @@ To control the game from a touch screen I reused most of the code from above but
 - [removeChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
 - [reload()](https://developer.mozilla.org/en-US/docs/Web/API/Location/reload)
 
+# Console logs during development
+![comparing DOMRect object values](assets/images/readmeimgs/compare-domrect-values.PNG) ![DOMRect docs](assets/images/readmeimgs/getBoundingClientRect.PNG)
+
+Logging DOMRect values for collision detection.
+
+![logging left movement values](assets/images/readmeimgs/log-left-movement.PNG)
+
+Logging values for left movement to console, minus values outside the gameboard.
+
+![logging right movement values](assets/images/readmeimgs/log-right-movement.PNG)
+
+Logging values for right movement to console.
+
+![logging falling aliens values](assets/images/readmeimgs/log-falling-aliens.PNG)
+
+Logging falling alien values for game reload on ship or board colision.
+
 # Deployment
 - This webpage was deployed to git hub pages at the following link  [My git hub pages link of live website]( https://gfpkelly1986.github.io/space-invaders/) 
 - Steps taken
