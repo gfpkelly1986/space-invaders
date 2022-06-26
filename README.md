@@ -147,5 +147,17 @@ To control the game from a touch screen I reused most of the code from above but
 - Speed levels
    - Provide some increasing levels of speed if certain scores are reached.
 
+# Validator Testing
+
+![Accessibility score for this ](assets/images/readmeimgs/Accessibility-SEO-score.PNG)
+
+![HTML Validation check](assets/images/readmeimgs/html-validation.PNG)
+
+![CSS Validation](assets/images/readmeimgs/CSS-validation.PNG)
+
+- Light house on Google Chrome was used to test the webpage for Accessibility and SEO. The results were 96 for accessibility and 100 for SEO.
+- The W3C Schools HTML validator was used to test the markup for the site. There were no errors in the final markup. One small error that had to be fixed was a space in one of the file paths for the alien images in the header. 
+- The W3C Schools CSS validator was used to test the CSS during development and before final push to git hub. There were no CSS errors returned from this validator test.
+- The JavaScript code was run through the Jshint linter and the results were ....
 
 
