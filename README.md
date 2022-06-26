@@ -163,4 +163,10 @@ To control the game from a touch screen I reused most of the code from above but
 # Bugs 
 - The main bug I had during development was when trying to implement a 'start game' button. The function would execute fine but as you attempted to play the game each shot fired made the game run faster and faster until it became unplayable. I had this function outside the code for the window-keydown-eventlistener and could not work out why the shootLaser setInterval function would speed up so for now the enemies are created quite slowly to allow the user to start without getting overwhelmed by enemies.
 
-
+# Deployment
+- This webpage was deployed to git hub pages at the following link  [My git hub pages link of live website]( https://gfpkelly1986.github.io/space-invaders/) 
+- Steps taken
+    1. Go to settings tab at the top banner of the repository page in question.
+    2. Click on pages on the left hand menu
+    3. Select main branch from the options pane. (Main replaced Master as terminology to describe the primary code branch)
+    4. Select save, and GitHub will publish the site.
