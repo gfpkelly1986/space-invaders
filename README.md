@@ -204,3 +204,13 @@ Logging falling alien values for game reload on ship or board colision.
     2. Click on pages on the left hand menu
     3. Select main branch from the options pane. (Main replaced Master as terminology to describe the primary code branch)
     4. Select save, and GitHub will publish the site.
+
+
+# Wireframes
+![landing page wireframe](assets/images/readmeimgs/wireframe-landing-page.jpg)
+
+Landing page Wireframe.
+
+![play game wireframe](assets/images/readmeimgs/wireframe-playgame.jpg)
+
+Board game page wireframe.
