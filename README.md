@@ -158,7 +158,11 @@ To control the game from a touch screen I reused most of the code from above but
 - Light house on Google Chrome was used to test the webpage for Accessibility and SEO. The results were 96 for accessibility and 100 for SEO.
 - The W3C Schools HTML validator was used to test the markup for the site. There were no errors in the final markup. One small error that had to be fixed was a space in one of the file paths for the alien images in the header. 
 - The W3C Schools CSS validator was used to test the CSS during development and before final push to git hub. There were no CSS errors returned from this validator test.
-- The JavaScript code was run through the Jshint linter and the results were ....
+- The JavaScript code was run through the Jshint linter. There are no significant issues to report other than the image below:
+
+![JSHint results](assets/images/readmeimgs/3unused-variables.PNG)
+
+These 3 functions are called from the mobile controller icon elements on playgame.html and so show up as unused variables in the JSHint results. 
 
 # Bugs 
 - The main bug I had during development was when trying to implement a 'start game' button. The function would execute fine but as you attempted to play the game each shot fired made the game run faster and faster until it became unplayable. I had this function outside the code for the window-keydown-eventlistener and could not work out why the shootLaser setInterval function would speed up so for now the enemies are created quite slowly to allow the user to start without getting overwhelmed by enemies.
