@@ -7,25 +7,23 @@
 This website is a simple fun game that uses JavaScript to allow users to interact with it. The user can navigate the ship left and right with the left and right arrow keys on desktop and has some left and right buttons to press while on mobile or touch screen devices. They can also shoot with the spacebar being pressed down or by using the circular icon on mobile devices. The user is given one minute to shoot as many enemies as possible before the time runs out and the game re-loads. Their current score is tracked throughout the game and their name is added to the game after they enter it on the welcome screen. A live link to the deployed game is given here: [My git hub pages link of live website](https://gfpkelly1986.github.io/space-invaders/) 
 
 # Table of Contents
-   *[Live Features]()*
+   *[Live Features](https://github.com/gfpkelly1986/space-invaders#live-features)*
 
-   *[Future Features]()*
+   *[Desired Features](https://github.com/gfpkelly1986/space-invaders#desired-features)*
 
-   *[Validator Testing]()*
+   *[Validator Testing](https://github.com/gfpkelly1986/space-invaders#validator-testing)*
 
-   *[Bugs During Development]()*
+   *[Bugs](https://github.com/gfpkelly1986/space-invaders#bugs)*
 
-   *[Bugs To Be Resolved]()*
+   *[Javascript Methods Used](https://github.com/gfpkelly1986/space-invaders#javascript-methods-used)*
 
-   *[Deployment]()*
+   *[Console Logs During Development](https://github.com/gfpkelly1986/space-invaders#console-logs-during-development)*
 
-   *[Research and plannning]()*
+   *[Deployment](https://github.com/gfpkelly1986/space-invaders#deployment)*
 
-   *[Credits/Attributions]()*
+   *[Wireframes](https://github.com/gfpkelly1986/space-invaders#wireframes)*
 
-   *[Javascript Methods Used]()*
-
-   *[Design Process]()*
+   *[Credits/Attributions](https://github.com/gfpkelly1986/space-invaders#creditsattributions)*
 
 # Live Features
 - Game Welcome Screen:
